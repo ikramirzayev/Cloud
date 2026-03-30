@@ -77,14 +77,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',                               # Veritabanı adı (varsayılan postgres)
-        'USER': 'postgres',                               # Kullanıcı adın
-        'PASSWORD': 'testdb.12!',                        # Senin belirlediğin şifre
-        'HOST': 'database-1.cryswsyewdzw.eu-north-1.rds.amazonaws.com', # AWS Endpoint adresin
-        'PORT': '5432',                                   # PostgreSQL portu
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'testdb.12!',
+        'HOST': 'database-1.cjacw404eq96.eu-central-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
