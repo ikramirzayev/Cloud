@@ -1,0 +1,13 @@
+@ProjeBackend_HostAddress = http://localhost:5056
+
+#if (EnableOpenAPI)
+GET {{ProjeBackend_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+#endif
+
+GET {{ProjeBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
