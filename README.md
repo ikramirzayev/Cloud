@@ -1,7 +1,22 @@
-Proje Adı: Bulut Bilişim Proje 1
+# ☁️ Bulut Bilişim Dönem Projesi - Hava Durumu Uygulaması
 
-Kullanılan Teknolojiler: .NET Web API, React, AWS S3.
+Bu proje, AWS bulut altyapısı üzerinde çalışan, modern bir **Çift Katmanlı (Two-Tier)** web uygulamasıdır.
 
-Kurulum: Projenin bilgisayarda nasıl çalıştırılacağı.
+## 🚀 Canlı Linkler
+* **Frontend (S3):** [S3 Linkini Buraya Yapıştır]
+* **Backend API (EC2):** `http://51.21.252.189:5056/weatherforecast`
 
-AWS Ayarları: S3 bucket adı ve yapılan izin ayarları.
+## 🏗️ Mimari Yapı
+Uygulama, yüksek erişilebilirlik ve performans hedeflenerek iki ayrı AWS servisi üzerinde dağıtılmıştır:
+* **Frontend:** React + Tailwind CSS kullanılarak geliştirildi ve **AWS S3** üzerinde statik web sitesi barındırma (Static Website Hosting) yöntemiyle yayınlandı.
+* **Backend:** .NET 8 Web API kullanılarak geliştirildi ve **AWS EC2 (Windows Server)** üzerinde host edildi.
+
+## 🔒 Güvenlik ve Konfigürasyon
+* **CORS Politikası:** API, yalnızca S3 üzerindeki frontend origin'inden gelen isteklere izin verecek şekilde yapılandırıldı.
+* **Security Groups:** EC2 üzerinde sadece 80 (HTTP) ve 5056 (API) portları dış dünyaya açıldı; RDP erişimi IP bazlı kısıtlandı.
+* **Firewall:** Windows Defender Firewall üzerinde API portu için özel Inbound kuralı tanımlandı.
+
+## 🛠️ Kullanılan Teknolojiler
+* **Frontend:** React, Tailwind CSS, Fetch API
+* **Backend:** .NET 8, Minimal API
+* **Cloud:** AWS (S3, EC2, IAM)
