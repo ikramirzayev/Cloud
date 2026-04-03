@@ -1,24 +1,32 @@
 var builder = WebApplication.CreateBuilder(args);
+
+// 1. CORS Politikasını Tanımla
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",
-        policy => policy.WithOrigins("http://localhost:3000") // React'ın adresi
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
+        policy =>
+        {
+            policy.WithOrigins("http://benim-bulut-projem-2026.s3-website.eu-north-1.amazonaws.com") 
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
 });
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+// 2. CORS'u Aktif Et (Mutlaka MapGet'ten önce olmalı)
 app.UseCors("AllowReact");
-// Configure the HTTP request pipeline.
+
+// KRİTİK NOT: Eğer sunucuda SSL sertifikan yoksa (ki şu an IP kullanıyorsun), 
+// aşağıdaki satırı yorum satırı yapmalısın. Yoksa tarayıcı isteği engeller.
+// app.UseHttpsRedirection(); 
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-
-app.UseHttpsRedirection();
 
 var summaries = new[]
 {
@@ -27,7 +35,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
