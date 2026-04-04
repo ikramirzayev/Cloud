@@ -3,8 +3,7 @@
 Bu proje, AWS bulut altyapısı üzerinde çalışan, modern bir **Çift Katmanlı (Two-Tier)** web uygulamasıdır.
 
 ## 🚀 Canlı Linkler
-* **Frontend (S3):** [S3 Linkini Buraya Yapıştır]
-* **Backend API (EC2):** `http://51.21.252.189:5056/weatherforecast`
+* **Frontend (S3):** http://benim-bulut-projem-2026.s3-website.eu-north-1.amazonaws.com/
 
 ## 🏗️ Mimari Yapı
 Uygulama, yüksek erişilebilirlik ve performans hedeflenerek iki ayrı AWS servisi üzerinde dağıtılmıştır:
