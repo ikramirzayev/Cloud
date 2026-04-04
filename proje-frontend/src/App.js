@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     // KENDİ EC2 IP ADRESİNİ BURAYA YAZ
-    fetch('http://51.21.252.189:5056/weatherforecast')
+    fetch('http://51.21.255.3:5056/weatherforecast')
       .then((response) => {
         if (!response.ok) throw new Error('CORS veya Bağlantı Hatası!');
         return response.json();
